@@ -16,7 +16,7 @@ Written in spring boot it is using Postgres as backend. It is enabled with Eurek
 Written in spring boot it is using MongoDB as backend. It is enabled with Eureka client, Configuration server, Openapi3 swagger URL & it is also seeding consolidated documents to Common dcument server. It is being used by USER-SERVICE. Its end poiunts are /ratings & /ratings/{ratingId}
 
 ### USER-SERVICE
-Written in spring boot it is using POSTGRESS as backend. It is enabled with Eureka client, Configuration server, Openapi3 swagger URL & it is also seeding consolidated documents to Common dcument server. Apart from about cloud capabilities we have also shown the improved resilence, Circuit Breaker pattern & Ratelimiters along with microservices architecture. Its end poiunts are /users & /users/{userId}. We have shown the demo of resilnece patterns and Feign client with this service.
+Written in spring boot it is using POSTGRESS as backend. It is enabled with Eureka client, Configuration server, Openapi3 swagger URL & it is also seeding consolidated documents to Common dcument server. Apart from about cloud capabilities we have also shown the improved resilence, Circuit Breaker pattern & Ratelimiters along with microservices architecture. Its end poiunts are /users & /users/{userId}. We have shown the demo of resilnece patterns and Feignclient[!https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html] with this service.
 
 ## API-GATEWAY
 It is using Spring-Cloud-Gateway, enabled with Eureka client & Configuration server. This services could be tested by appending end points of each of HOTEL-SERVICE, RATING-SERVICE and USER-SERVICE.
@@ -29,3 +29,6 @@ It is implemented with Spring Cloud Configuration server. The configuration is s
 
 ## Document-Server
 It is implemented with Spring Fox lib of Spring Boot which consolidate the individual swagger docs of each of Microservice & present them on a single swagger dcument. Please select the spec for any service from the dropdown provided for the same.
+
+## docker-compose.yml
+This service will start 2 Postgres conatiners, One mongo DB along with PGafmin & Mongo-express configuration to test it fully.
