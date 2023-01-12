@@ -1,10 +1,10 @@
 # SpringBootMicroserviceExample
 
 ## What is this?
-The repository contains a complete Microservices example with 3 main services USER-SERVICE, HOTEL-SERVICE and RATING-SERVICE.  In it we have used OKTA AUTH, Spring Security, Resilence4j, Feign Client, Apring Cloud api gatway, Configuration server, Eureka server, Oenapi3 for individual services documents  and a consolidated swagger docs server which provides the consilidated view of all swagger docs. This Microservices examples uses Postgres , SQL & Mongo databases running inside docker containers for which we are also providing a docker compose file.
+The repository contains a complete Microservices example with 3 main services USER-SERVICE, HOTEL-SERVICE and RATING-SERVICE.  In it we have used [OKTA AUTH](https://developer.okta.com/docs/concepts/how-okta-works/), [Spring Security](https://spring.io/projects/spring-security), [Resilence4j](https://resilience4j.readme.io/docs), [Feign Client](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html), [Spring Cloud api gatway](https://spring.io/projects/spring-cloud-gateway), [Configuration server](https://spring.io/projects/spring-cloud-config),[Eureka server](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html), [OenApi3 Specifications](https://swagger.io/specification/) for individual services documents  and a consolidated swagger docs server which provides the consilidated view of all swagger docs. This Microservices examples uses Postgres , SQL & Mongo databases running inside docker containers for which we are also providing a docker compose file.
 
 ## Salient features
-Apart from about cloud capabilities we have also shown the improved resilence, Circuit Breaker pattern & Ratelimiters along with microservices architecture.
+Apart from about cloud capabilities we have also shown the improved [resilence](https://resilience4j.readme.io/docs), [Feign Client](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html), [Circuit Breaker pattern](https://martinfowler.com/bliki/CircuitBreaker.html), [fallback](https://martinfowler.com/bliki/CircuitBreaker.html), [BlukHead](https://reflectoring.io/bulkhead-with-resilience4j/) , [Ratelimiters](https://resilience4j.readme.io/docs/ratelimiter) & [Retry mechanism ](https://resilience4j.readme.io/docs/retry) along with microservices architecture.
 
 ## What are the component services & salient features
 We are are using following services to deliver this Demo
