@@ -1,0 +1,39 @@
+server:
+  port: 8084
+  forward-headers-strategy: framework
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+          filters:
+            - RewritePath=/users/(?<path>.*), /$\{path}
+
+        - id: HOTEL-SERVICE
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/hotels/**,/staffs
+          filters:
+            - RewritePath=/hotels/(?<path>.*), /$\{path}
+
+        - id: RATING-SERVICE
+          uri: lb://RATING-SERVICE
+          predicates:
+            - Path=/ratings/**
+          filters:
+            - RewritePath=/ratings/(?<path>.*), /$\{path}
+  application:
+    name: API-GATEWAY
+  config:
+    import: optional:configserver:http://localhost:8085
+
+springdoc:
+  swagger-ui:
+    path: /
+
+logging:
+  level:
+    root: INFO

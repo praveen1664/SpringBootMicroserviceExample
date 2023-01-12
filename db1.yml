@@ -1,0 +1,62 @@
+version: '3.5'
+
+services:
+  UserDB:
+    container_name: UserDB
+    image: postgres
+    environment:
+      POSTGRES_DB: User
+      POSTGRES_USER: User
+      POSTGRES_PASSWORD: User
+    ports:
+      - "5550:5432"
+    restart: unless-stopped
+
+  HotelDB:
+    container_name: HotelDB
+    image: postgres
+    environment:
+      POSTGRES_DB: Hotel
+      POSTGRES_USER: Hotel
+      POSTGRES_PASSWORD: Hotel
+    ports:
+      - "5551:5432"
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: abc@pg.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - "5555:80"
+    restart: unless-stopped
+
+  mongodb:
+    container_name: mongoDB
+    image: mongo
+    ports:
+      - 5552:27017
+    environment:
+      # - MONGO_INITDB_DATABASE=mongodb
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=mongo
+    restart: unless-stopped
+
+  mongo-express:
+    container_name: mongoexpress
+    image: mongo-express
+    ports:
+      - "5553:8081"
+    environment:
+            - ME_CONFIG_MONGODB_SERVER=mongoDB
+            - ME_CONFIG_MONGODB_PORT=27017
+            - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+            - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+            - ME_CONFIG_MONGODB_AUTH_USERNAME=mongo
+            - ME_CONFIG_MONGODB_AUTH_PASSWORD=mongo
+            - ME_CONFIG_BASICAUTH_USERNAME=mongo
+            - ME_CONFIG_BASICAUTH_PASSWORD=mongo
+    restart: unless-stopped
+

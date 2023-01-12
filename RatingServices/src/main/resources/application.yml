@@ -1,0 +1,13 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: RATING-SERVICE
+  data:
+    mongodb:
+      uri: mongodb://mongo:mongo@localhost:5552/microservices?authSource=admin
+      database: microservices
+  config:
+    import: configserver:http://localhost:8085
+
