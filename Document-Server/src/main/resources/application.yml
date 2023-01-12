@@ -1,0 +1,29 @@
+---
+info:
+  component: Default Single Swagger Document Server for MicroService
+
+spring:
+  profiles: default
+
+server:
+  port: 8088
+
+documentation: 
+  baseurl: http://localhost
+  swagger: 
+    services:   
+      - 
+        name: USER-SERVICE
+        url: ${documentation.baseurl}:8081/v3/api-docs?group=USER-SERVICE
+        version: 3.0
+      - 
+        name: HOTEL-SERVICE
+        url: ${documentation.baseurl}:8082/v3/api-docs?group=HOTEL-SERVICE
+        version: 3.0
+      -
+        name: RATING-SERVICE
+        url: ${documentation.baseurl}:8083/v3/api-docs?group=RATING-SERVICE
+        version: 3.0
+
+ 
+    
